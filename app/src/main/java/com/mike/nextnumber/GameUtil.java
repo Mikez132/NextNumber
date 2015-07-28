@@ -16,7 +16,7 @@ public class GameUtil {
     */
     public static int genenratenewNumb(int n) {
         Random r = new Random();
-        int ranNumb = r.nextInt(n+1);
+        int ranNumb = r.nextInt(n);
         return ranNumb;
     }
     public static boolean isPrime(int n) {

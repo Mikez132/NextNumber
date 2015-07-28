@@ -10,11 +10,31 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.*;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+
+import java.util.Random;
 
 
 public class OddEven extends ActionBarActivity implements OnTouchListener,OnDragListener {
 
+    private final static int MAXNUM = 10;
+
+    private void setNumbers(){
+
+        Button int1 = (Button)findViewById(R.id.int1_Btn);
+        Button int2 = (Button)findViewById(R.id.int2_Btn);
+        Button int3 = (Button)findViewById(R.id.int3_Btn);
+
+        String int1_S = Integer.toString(GameUtil.genenratenewNumb(MAXNUM));
+        String int2_S = Integer.toString(GameUtil.genenratenewNumb(MAXNUM));
+        String int3_S = Integer.toString(GameUtil.genenratenewNumb(MAXNUM));
+
+        int1.setText(int1_S);
+        int2.setText(int2_S);
+        int3.setText(int3_S);
+
+    }
     @Override
     public boolean onDrag(View v,DragEvent e){
 
@@ -38,9 +58,9 @@ public class OddEven extends ActionBarActivity implements OnTouchListener,OnDrag
 
             DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
             v.startDrag(null,shadowBuilder,v,0);
-            v.invalidate();
-            return true;
+            v.setVisibility(View.INVISIBLE);
 
+            return true;
 
         }
         else{
@@ -48,14 +68,23 @@ public class OddEven extends ActionBarActivity implements OnTouchListener,OnDrag
             return false;
         }
 
-
-
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_odd_even);
+        Intent intent = getIntent();
+
+        findViewById(R.id.int1_Btn).setOnTouchListener(this);
+        findViewById(R.id.int2_Btn).setOnTouchListener(this);
+        findViewById(R.id.int3_Btn).setOnTouchListener(this);
+        findViewById(R.id.oddbox_Lyt).setOnDragListener(this);
+        findViewById(R.id.evenbox_Lyt).setOnDragListener(this);
+
+        setNumbers();
 
     }
 

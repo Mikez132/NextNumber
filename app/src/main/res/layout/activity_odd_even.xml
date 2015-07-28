@@ -9,6 +9,77 @@
     <TextView android:text="@string/top_Lbl" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/top_Lbl" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/int1_Btn"
+        android:layout_below="@+id/top_Lbl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/int2_Btn"
+        android:layout_below="@+id/int1_Btn"
+        android:layout_alignLeft="@+id/int1_Btn"
+        android:layout_alignStart="@+id/int1_Btn" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/int3_Btn"
+        android:layout_below="@+id/int2_Btn"
         android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/int1_Btn"
+        android:layout_toStartOf="@+id/int1_Btn"
+        android:layout_alignTop="@+id/int1_Btn"
+        android:id="@+id/oddbox_Lyt"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/int1_Btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/int1_Btn"
+        android:layout_toEndOf="@+id/int1_Btn"
+        android:id="@+id/evenbox_Lyt"></LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Odd"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/oddbox_Lyt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Even"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/evenbox_Lyt"
+        android:layout_alignRight="@+id/evenbox_Lyt"
+        android:layout_alignEnd="@+id/evenbox_Lyt" />
 
 </RelativeLayout>
