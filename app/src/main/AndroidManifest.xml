@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OddEven"
+            android:label="@string/title_activity_odd_even" >
+        </activity>
     </application>
 
 </manifest>

@@ -28,6 +28,7 @@
         android:layout_marginTop="30dp"
         android:layout_below="@+id/profile_Btn"
         android:layout_alignLeft="@+id/profile_Btn"
-        android:layout_alignStart="@+id/profile_Btn" />
+        android:layout_alignStart="@+id/profile_Btn"
+        android:onClick="startClicked" />
 
 </RelativeLayout>
